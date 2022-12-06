@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import './scss/style.scss'
 import './i18n'
+import PopularQuestions from "./pages/PopularQuestions/PopularQuestions";
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="" element={<Home/>}/>
           <Route path="about" element={<About/>}/>
           <Route path="catalog" element={<Catalog/>}/>
+          <Route path="PopularQuestions" element={<PopularQuestions/>}/>
           <Route path="*" element={<NotFound/>}/>
           </Route>
            <Route path="custom" element={<Custom/>}/> 

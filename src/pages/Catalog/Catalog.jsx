@@ -2,17 +2,18 @@ import React, { useContext, useEffect } from 'react'
 import CategoryTitle from '../../components/CategoryTitle/CategoryTitle';
 import { CustomContext } from '../../utils/context';
 import BreadCrumbs from './BreadCrumbs/BreadCrumbs';
+import CatalogFilter from './CatalogFilter/CatalogFilter';
 import CatalogRow from './CatalogRow/CatalogRow';
-import ChoseSettings from './choseSettings/ChoseSettings';
 import { SideBar } from './SideBar/SideBar';
 
 const Catalog = () => {
 
-  const {category, getProducts} = useContext(CustomContext)
+  const {gender,category, getProducts, price} = useContext(CustomContext)
+
 
   useEffect(() => {
     getProducts()
-  }, [])
+  },  [gender, category, price])
 
   return (
     <section className='catalog'>
@@ -23,8 +24,8 @@ const Catalog = () => {
             <div className='catalog__right'>
                 <h2 className='catalog__content-title'>
                    <CategoryTitle/>
-                   {/* <ChoseSettings/> */}
                 </h2>
+                <CatalogFilter/>
                 <CatalogRow/>
             </div>
         </div>
